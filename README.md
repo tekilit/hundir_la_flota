@@ -1,8 +1,8 @@
 Proyecto Hundir la flota ⛴️ 💣 💥
 Realizado por:
 
-Noya Fernández del Cotero
-Silvia Quintana
+* Noya Fernández del Cotero
+* Silvia Quintana
 
 
 Este documento recoge el primer proyecto para el bootcamp de Data science.
