@@ -125,7 +125,7 @@ print("------------------------------------------")
 print(tablero_disparos_maquina)
 
 def ataca_jugador():
-    while "O" in maquina_barcos or "O" in jugador_barcos :
+    while "O" in maquina_barcos:
         x = int(input( """introduce número del 1 al 10 de fila que quieres disparar, ¡Suerte!! """))
         y = int(input("""introduce número del 1 al 10 de columna que quieres disparar, ¡Suerte!! """))
         coordenadas_disparo = x, y
@@ -191,7 +191,7 @@ def ataca_jugador():
                 
 
 def ataca_maquina():
-    while "O" in jugador_barcos or "O" in maquina_barcos :
+    while "O" in jugador_barcos:
         cordenadas_disparo_aleatoria= np.random.randint(0,10, size=2)
         x_maquina = cordenadas_disparo_aleatoria[0]
         y_maquina = cordenadas_disparo_aleatoria[1]
