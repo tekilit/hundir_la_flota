@@ -60,7 +60,7 @@ def tablero_barcos_jugador():
     barcos_3e = barcos_a_tablero(2,3)
     barcos_4e = barcos_a_tablero(4,1)
     barcos_2e = barcos_a_tablero(3,2)
-    barcos_1e = barcos_a_tablero(1,4)
+    barcos_1e = barcos_a_tablero(1,2)
     
     return tablero
 
@@ -75,7 +75,7 @@ def tablero_barcos_maquina():
         barcos_3e = barcos_a_tablero(2,3)
         barcos_4e = barcos_a_tablero(4,1)
         barcos_2e = barcos_a_tablero(3,2)
-        barcos_1e = barcos_a_tablero(1,4)
+        barcos_1e = barcos_a_tablero(1,2)
 
         return tablero
 
@@ -125,115 +125,116 @@ print("------------------------------------------")
 print(tablero_disparos_maquina)
 
 def ataca_jugador():
-            x = int(input( """introduce número del 1 al 10 de fila que quieres disparar, ¡Suerte!! """))
-            y = int(input("""introduce número del 1 al 10 de columna que quieres disparar, ¡Suerte!! """))
-            # tocados_jugador = 4
-
-            coordenadas_disparo = x, y
- 
-            print(coordenadas_disparo)
-            if (x < 0 or x > 10) or (y < 0 or y > 10):
-                print(x)
-                print(y)
-                print("Número introducido erróneo, te recuerdo que solo pueden ser números del 1 al 10")
-                ataca_jugador()
-            elif coordenadas_disparo and maquina_barcos[x-1, y-1] == 'O':
-                maquina_barcos[x-1][y-1] = 'X'
-                tablero_disparos_jugador[x-1][y-1] = 'X'
-                print(tablero_disparos_jugador[x-1][y-1])
+    while "O" in maquina_barcos or "O" in maquina_barcos :
+        x = int(input( """introduce número del 1 al 10 de fila que quieres disparar, ¡Suerte!! """))
+        y = int(input("""introduce número del 1 al 10 de columna que quieres disparar, ¡Suerte!! """))
+        coordenadas_disparo = x, y
+        print(coordenadas_disparo) 
+        if (x < 0 or x > 10) or (y < 0 or y > 10):
+            print(x)
+            print(y)
+            print("Número introducido erróneo, te recuerdo que solo pueden ser números del 1 al 10")
+            ataca_jugador()
+        elif coordenadas_disparo and maquina_barcos[x-1, y-1] == 'O':
+            maquina_barcos[x-1][y-1] = 'X'
+            tablero_disparos_jugador[x-1][y-1] = 'X'
+            print(tablero_disparos_jugador[x-1][y-1])
         
-                # tocados_jugador -= tocados_jugador
-                # print(tocados_jugador)
-                print(f"""Enhorabuena has TOCADO BARCO!!!, está ha sido tú última coordenada {coordenadas_disparo},
-                    fila: {x} y columna: {y} te recomiendo que introduzcas la más cercana por si hay suerte de nuevo!! """)
-                print("------------------------------------------")
-                print("             TURNO JUGADOR")
-                print("             TABLERO ATAQUE JUGADOR")
-                print("------------------------------------------")
-                print(tablero_disparos_jugador, flush=True)
-                print("------------------------------------------")
-                # tocados_jugador -= tocados_jugador
-                # print(tocados_jugador)
-                if "Tocado!!":
+            # tocados_jugador -= tocados_jugador
+            # print(tocados_jugador)
+            print(f"""Enhorabuena has TOCADO BARCO!!!, está ha sido tú última coordenada {coordenadas_disparo},
+                fila: {x} y columna: {y} te recomiendo que introduzcas la más cercana por si hay suerte de nuevo!! """)
+            print("------------------------------------------")
+            print("             TURNO JUGADOR")
+            print("             TABLERO ATAQUE JUGADOR")
+            print("------------------------------------------")
+            print(tablero_disparos_jugador, flush=True)
+            print("------------------------------------------")
+            # tocados_jugador -= tocados_jugador
+            # print(tocados_jugador)
+            if "Tocado!!":
                     ataca_jugador()
                 # jugador dispara y comprueba si hay agua, toca agua y marca '-' en su tablero
                 # return "Tocado!!"
-            elif coordenadas_disparo and maquina_barcos[x-1, y-1] == ' ':
-                maquina_barcos[x-1][y-1] = '-'
-                tablero_disparos_jugador[x-1][y-1] = '_'
+        elif coordenadas_disparo and maquina_barcos[x-1, y-1] == ' ':
+            maquina_barcos[x-1][y-1] = '-'
+            tablero_disparos_jugador[x-1][y-1] = '_'
 
-                print("agua")
-                print("------------------------------------------")
-                print("             TURNO JUGADOR")
-                print("             TABLERO ATAQUE JUGADOR")
-                print("------------------------------------------")
-                print(tablero_disparos_jugador, flush=True)
-                print("------------------------------------------")
+            print("agua")
+            print("------------------------------------------")
+            print("             TURNO JUGADOR")
+            print("             TABLERO ATAQUE JUGADOR")
+            print("------------------------------------------")
+            print(tablero_disparos_jugador, flush=True)
+            print("------------------------------------------")
 
-                if "agua":
-                    print("Turno de jugador")
-                    ataca_maquina()
-                    # si introduce cordenadas repetidas te avisa, y te informa cual
-                    # return "Agua!!"
-            elif coordenadas_disparo and maquina_barcos[x-1, y-1] == 'X' or coordenadas_disparo and maquina_barcos[x-1, y-1] == '-':
-                print(f"""vaya parece que ya has atacado esta coordenada antes {coordenadas_disparo},
-                    fila: {x} y columna: {y}, por favor, introduce nuevas coordenadas""")
-                print("------------------------------------------")
-                print("             TURNO JUGADOR")
-                print("             TABLERO ATAQUE JUGADOR")
-                print("------------------------------------------")
-                print(tablero_disparos_jugador, flush=True)
-                print("------------------------------------------")
+            if "agua":
+                print("Turno de jugador")
+                ataca_maquina()
+                # si introduce cordenadas repetidas te avisa, y te informa cual
+                # return "Agua!!"
+        elif coordenadas_disparo and maquina_barcos[x-1, y-1] == 'X' or coordenadas_disparo and maquina_barcos[x-1, y-1] == '-':
+            print(f"""vaya parece que ya has atacado esta coordenada antes {coordenadas_disparo},
+                fila: {x} y columna: {y}, por favor, introduce nuevas coordenadas""")
+            print("------------------------------------------")
+            print("             TURNO JUGADOR")
+            print("             TABLERO ATAQUE JUGADOR")
+            print("------------------------------------------")
+            print(tablero_disparos_jugador, flush=True)
+            print("------------------------------------------")
 
-                ataca_jugador()
+            ataca_jugador()
+          
+
+    else:
+        return "No quedan barcos por derribar, !!HAS GANADO!!"
                 
 
 def ataca_maquina():
-    cordenadas_disparo_aleatoria= np.random.randint(0,10, size=2)
-    x_maquina = cordenadas_disparo_aleatoria[0]
-    y_maquina = cordenadas_disparo_aleatoria[1]
-    cordenadas_disparo_maquina = x_maquina, y_maquina
-    print(cordenadas_disparo_maquina )
+    while "O" in jugador_barcos or "O" in maquina_barcos :
+        cordenadas_disparo_aleatoria= np.random.randint(0,10, size=2)
+        x_maquina = cordenadas_disparo_aleatoria[0]
+        y_maquina = cordenadas_disparo_aleatoria[1]
+        cordenadas_disparo_maquina = x_maquina, y_maquina
+        print(cordenadas_disparo_maquina )
 
 #jugador dispara y comprueba si hay barco, toca barco y marca 'X'en el tablero de barcos maquina y en el de disparos del jugador, 
 #actualiza contador de barcos de maquina -1
-    if cordenadas_disparo_maquina and jugador_barcos[x_maquina][y_maquina] == 'O':
-        jugador_barcos[x_maquina][y_maquina]= 'X'
-        tablero_disparos_maquina[x_maquina][y_maquina] = 'X'
-        print("------------------------------------------")
-        print("             TURNO MAQUINA")
-        print("             TABLERO ATAQUE MAQUINA")
-        print("------------------------------------------")
-        print(tablero_disparos_maquina, flush=True)
-        tocados_maquina -= tocados_maquina
-        print(tocados_maquina)
-        
-        if "Tocado barco!! " :
+        if cordenadas_disparo_maquina and jugador_barcos[x_maquina][y_maquina] == 'O':
+            jugador_barcos[x_maquina][y_maquina]= 'X'
+            tablero_disparos_maquina[x_maquina][y_maquina] = 'X'
             print("------------------------------------------")
             print("             TURNO MAQUINA")
             print("             TABLERO ATAQUE MAQUINA")
             print("------------------------------------------")
             print(tablero_disparos_maquina, flush=True)
-            ataca_maquina()
+        
+            if "Tocado barco!! " :
+                print("------------------------------------------")
+                print("             TURNO MAQUINA")
+                print("             TABLERO ATAQUE MAQUINA")
+                print("------------------------------------------")
+                print(tablero_disparos_maquina, flush=True)
+                ataca_maquina()
    
 #jugador dispara y comprueba si hay agua, toca agua y marca '-' en su tablero
-    elif cordenadas_disparo_maquina and jugador_barcos[x_maquina][y_maquina] == ' ':
-        jugador_barcos[x_maquina][y_maquina] = '-'
-        tablero_disparos_maquina[x_maquina][y_maquina] = '_'
-        print("------------------------------------------")
-        print("             TURNO MAQUINA")
-        print("             TABLERO ATAQUE MAQUINA")
-        print("------------------------------------------")
-        print(tablero_disparos_maquina, flush=True)
-        print("agua")
-        if "agua":
-            ataca_jugador()
+        elif cordenadas_disparo_maquina and jugador_barcos[x_maquina][y_maquina] == ' ':
+            jugador_barcos[x_maquina][y_maquina] = '-'
+            tablero_disparos_maquina[x_maquina][y_maquina] = '_'
+            print("------------------------------------------")
+            print("             TURNO MAQUINA")
+            print("             TABLERO ATAQUE MAQUINA")
+            print("------------------------------------------")
+            print(tablero_disparos_maquina, flush=True)
+            print("agua")
+            if "agua":
+                ataca_jugador()
         
-    elif cordenadas_disparo_maquina and jugador_barcos[x_maquina,y_maquina] == 'X' or cordenadas_disparo_maquina and jugador_barcos[x_maquina,y_maquina] == '-':
-        #print(f"vaya parece que ya has atacado esta coordenada {cordenadas_disparo_maquina}, fila: {x_maquina} y columna: {y_maquina}, introduce nuevas coordenadas")
-        ataca_maquina()
-    
-    elif maquina_barcos["O" in maquina_barcos]== False:
-        game_over =  "O" in maquina_barcos
-        print("HAS GANADO, NO QUEDAN BARCOS POR DERRIBAR")
-        return game_over
+        elif cordenadas_disparo_maquina and jugador_barcos[x_maquina,y_maquina] == 'X' or cordenadas_disparo_maquina and jugador_barcos[x_maquina,y_maquina] == '-':
+            #print(f"vaya parece que ya has atacado esta coordenada {cordenadas_disparo_maquina}, fila: {x_maquina} y columna: {y_maquina}, introduce nuevas coordenadas")
+            ataca_maquina()
+        elif ataca_jugador == "No quedan barcos por derribar, !!HAS GANADO!!": 
+            False
+        
+    else:
+        return "No quedan barcos por derribar, !!HAS GANADO!!"
