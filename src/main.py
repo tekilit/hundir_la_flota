@@ -1,7 +1,7 @@
 
 import functions as fn
 import numpy as np
-7
+
 
   
 jugador_barcos = fn.tablero_barcos_jugador()
