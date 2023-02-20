@@ -67,13 +67,7 @@ def tablero_barcos_jugador():
     
 jugador_barcos = tablero_barcos_jugador()
 
-print("""                  """)
-print("""
-┌┬┐┌─┐┌┐ ┬  ┌─┐┬─┐┌─┐  ┌┐ ┌─┐┬─┐┌─┐┌─┐┌─┐   ┬┬ ┬┌─┐┌─┐┌┬┐┌─┐┬─┐
- │ ├─┤├┴┐│  ├┤ ├┬┘│ │  ├┴┐├─┤├┬┘│  │ │└─┐   ││ ││ ┬├─┤ │││ │├┬┘
- ┴ ┴ ┴└─┘┴─┘└─┘┴└─└─┘  └─┘┴ ┴┴└─└─┘└─┘└─┘  └┘└─┘└─┘┴ ┴─┴┘└─┘┴└─ """ )
-print("""                  """)
-print(jugador_barcos)
+
 
 tablero =np.full((10, 10), " ")
 def tablero_barcos_maquina():
@@ -86,10 +80,46 @@ def tablero_barcos_maquina():
         return tablero
 
 maquina_barcos = tablero_barcos_maquina()
+
+
+
+#Aqui levanta todos los tableros
+tablero =np.full((10, 10), " ")
+
+
+tablero_disparos_jugador = np.full((10,10), " ")
+print("""                  """)
+print("""
+┌┬┐┌─┐┌┐ ┬  ┌─┐┬─┐┌─┐  ┌┐ ┌─┐┬─┐┌─┐┌─┐┌─┐   ┬┬ ┬┌─┐┌─┐┌┬┐┌─┐┬─┐
+ │ ├─┤├┴┐│  ├┤ ├┬┘│ │  ├┴┐├─┤├┬┘│  │ │└─┐   ││ ││ ┬├─┤ │││ │├┬┘
+ ┴ ┴ ┴└─┘┴─┘└─┘┴└─└─┘  └─┘┴ ┴┴└─└─┘└─┘└─┘  └┘└─┘└─┘┴ ┴─┴┘└─┘┴└─ """ )
+print("""                  """)
+print("------------------------------------------")
+print("              BARCOS JUGADOR")
+print("------------------------------------------")
+print(jugador_barcos)
+print("------------------------------------------")
+print("             TABLERO ATAQUE JUGADOR")
+print("------------------------------------------")
+print(tablero_disparos_jugador)
+
+
+tablero =np.full((10, 10), " ")
+
+
+
+tablero_disparos_maquina =  np.full((10,10), " ")
 print("""                  """)
 print("""
 ┌┬┐┌─┐┌┐ ┬  ┌─┐┬─┐┌─┐  ┌┐ ┌─┐┬─┐┌─┐┌─┐┌─┐  ┌┬┐┌─┐┌─┐ ┬ ┬┬┌┐┌┌─┐
  │ ├─┤├┴┐│  ├┤ ├┬┘│ │  ├┴┐├─┤├┬┘│  │ │└─┐  │││├─┤│─┼┐│ │││││├─┤
  ┴ ┴ ┴└─┘┴─┘└─┘┴└─└─┘  └─┘┴ ┴┴└─└─┘└─┘└─┘  ┴ ┴┴ ┴└─┘└└─┘┴┘└┘┴ ┴ """)
 print("""                  """)
+print("------------------------------------------")
+print("              BARCOS MAQUINA")
+print("------------------------------------------")
 print(maquina_barcos)
+print("------------------------------------------")
+print("             TABLERO ATAQUE MAQUINA")
+print("------------------------------------------")
+print(tablero_disparos_maquina)
