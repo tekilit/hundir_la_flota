@@ -187,7 +187,7 @@ def ataca_jugador():
           
 
     else:
-        return "No quedan barcos por derribar, !!HAS GANADO!!"
+        return False
                 
 
 def ataca_maquina():
@@ -233,8 +233,8 @@ def ataca_maquina():
         elif cordenadas_disparo_maquina and jugador_barcos[x_maquina,y_maquina] == 'X' or cordenadas_disparo_maquina and jugador_barcos[x_maquina,y_maquina] == '-':
             #print(f"vaya parece que ya has atacado esta coordenada {cordenadas_disparo_maquina}, fila: {x_maquina} y columna: {y_maquina}, introduce nuevas coordenadas")
             ataca_maquina()
-        elif ataca_jugador == "No quedan barcos por derribar, !!HAS GANADO!!": 
-            False
+
+            
         
     else:
-        return "No quedan barcos por derribar, !!HAS GANADO!!"
+        return False
