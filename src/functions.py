@@ -60,7 +60,7 @@ def tablero_barcos_jugador():
     barcos_3e = barcos_a_tablero(2,3)
     barcos_4e = barcos_a_tablero(4,1)
     barcos_2e = barcos_a_tablero(3,2)
-    barcos_1e = barcos_a_tablero(1,2)
+    barcos_1e = barcos_a_tablero(1,4)
     
     return tablero
 
@@ -75,7 +75,7 @@ def tablero_barcos_maquina():
         barcos_3e = barcos_a_tablero(2,3)
         barcos_4e = barcos_a_tablero(4,1)
         barcos_2e = barcos_a_tablero(3,2)
-        barcos_1e = barcos_a_tablero(1,2)
+        barcos_1e = barcos_a_tablero(1,4)
 
         return tablero
 
@@ -239,8 +239,6 @@ def ataca_maquina():
         elif cordenadas_disparo_maquina and jugador_barcos[x_maquina,y_maquina] == 'X' or cordenadas_disparo_maquina and jugador_barcos[x_maquina,y_maquina] == '-':
             #print(f"vaya parece que ya has atacado esta coordenada {cordenadas_disparo_maquina}, fila: {x_maquina} y columna: {y_maquina}, introduce nuevas coordenadas")
             ataca_maquina()
-
-            
-        
+    
     else:
         return False
