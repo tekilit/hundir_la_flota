@@ -2,6 +2,9 @@
 import functions as fn
 import numpy as np
 
+fn.jugador_barcos
+fn.maquina_barcos
+
 if fn.ataca_jugador() == False:
     print("""
 ╔═╗╔╗╔╦ ╦╔═╗╦═╗╔═╗╔╗ ╦ ╦╔═╗╔╗╔╔═╗                  
